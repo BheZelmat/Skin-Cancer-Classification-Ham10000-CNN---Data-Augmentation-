@@ -2,34 +2,57 @@
 
 
 ![alt text](https://github.com/BheZelmat/Skin-Cancer-Classification-Ham10000-CNN---Data-Augmentation-/blob/main/img.png?raw=true)
-  
-## 📝 Description
-- The project "Predicting Medical Costs Billed by Health Insurance" leverages a comprehensive dataset of 1338 entries, encompassing attributes such as age, sex, BMI, number of children, smoking status, region, and individual medical charges. It aims to analyze how these factors impact medical costs.
- The dataset reflects a broad range of age groups, body mass indices, with an average of about one child per individual, and significant variability in medical expenses.
- Utilizing advanced machine learning models including Neural Networks, Gradient Boosting, Linear Regression, Random Forest, and Ensemble methods, the project seeks to delve into the data, unveiling patterns and correlations.
-This endeavor is geared towards facilitating the development of robust predictive models, enabling more precise estimations of health insurance costs based on specific individual attributes.
+## Project Overview
+This project aims to leverage the power of Convolutional Neural Networks (CNNs) for the classification of skin cancer, utilizing the HAM10000 dataset. This rich dataset consists of dermatoscopic images of skin lesions, which are used to train a CNN model to distinguish between different types of skin cancer.
 
-## ⏳ Dataset
-- Download the dataset for custom training
-- https://www.kaggle.com/datasets/mirichoi0218/insurance
-  
-The dataset contains 1338 entries and 7 columns, each representing different attributes:
+## Dataset
+The HAM10000 dataset includes metadata for various skin lesions. Key columns in the metadata include:
 
-* Age: The age of the primary beneficiary (numerical)
+lesion_id: Unique identifier for each lesion.
+image_id: Unique identifier for each image.
+dx: The diagnosis for the image (type of skin cancer).
+dx_type: The type of diagnostic method used.
+age: Age of the patient.
+sex: Sex of the patient.
+localization: The location of the skin lesion on the body.
+dataset: The dataset source.
+## CNN Model
+We use a Convolutional Neural Network, a class of deep neural networks most commonly applied to analyzing visual imagery. The CNN will learn to identify patterns and features in the images that are indicative of various types of skin cancer.
 
-* Sex: The policyholder's gender (categorical: male, female)
+## Data Augmentation
+To address the issue of limited data and improve the generalization of our model, we implement data augmentation techniques. This involves artificially expanding the size of the training dataset by creating modified versions of the images. Techniques include rotations, zooming, shifts, shearing, and flipping. Data augmentation helps in reducing overfitting and improves model robustness.
 
-* BMI: Body mass index (numerical, float)
+## Usage
+* Data Preprocessing: Load the HAM10000 dataset, preprocess the images, and split them into training, validation, and test sets.
+* Data Augmentation: Implement data augmentation on the training set.
+* Model Training: Train the CNN model using the augmented training data.
+* Evaluation: Evaluate the model's performance on the test set.
+* Prediction: Use the trained model to classify new skin lesion images.
+## Dependencies
+Python 3.x
+TensorFlow
+Keras
+Pandas
+Numpy
+Matplotlib
+How to Run
+Detailed instructions on how to set up the environment, preprocess the data, train the model, and evaluate its performance are provided in the Notebook documentation.
 
-* Children: Number of children or dependents covered by the health insurance (numerical)
+## License
+This project is open-sourced under the MIT license.
+## Performance Metrics
+* Testing Loss (Categorical Cross Entropy): Measures the performance of the classification model whose output is a probability value between 0 and 1. A lower loss indicates a better model. For this model, the testing loss is 0.706.
 
-* Smoker: Smoking status of the policyholder (categorical: yes, no)
+* Testing Accuracy: Represents the percentage of correct predictions out of all predictions made. The testing accuracy for this model is 75.0%. This means that 75% of the lesion images in the test set were correctly classified by the model.
 
-* Region: The beneficiary's residential area in the US (categorical: northeast, southeast, southwest, northwest)
+* Testing Precision: Precision is the ratio of correctly predicted positive observations to the total predicted positives. High precision relates to a low false positive rate. The testing precision for this model is 81.0%.
 
-* Charges: Individual medical costs billed by health insurance (numerical, float)
+* Testing Recall: Recall (Sensitivity) is the ratio of correctly predicted positive observations to all observations in the actual class. The testing recall for this model is 69.6%.
 
-All columns are fully populated with non-null data. The data types are appropriate for each column (numerical for "age", "bmi", "children", and "charges"; categorical for "sex", "smoker", and "region").
-
+## Interpretation
+The accuracy of 75.0% indicates a good level of reliability in the model's predictions. However, there is room for improvement, possibly through further tuning of the model or by using more complex architectures.
+A precision of 81.0% suggests that when the model predicts a skin lesion as a specific type of cancer, it is correct 81% of the time. This is crucial for medical diagnostics to minimize false positives.
+The recall of 69.6% shows that the model is somewhat conservative in its predictions, possibly missing some true positive cases. It’s important for medical applications to have a higher recall to ensure all potential cases are identified.
 ## Author 
 - B Houssem E Zelmat 
+
