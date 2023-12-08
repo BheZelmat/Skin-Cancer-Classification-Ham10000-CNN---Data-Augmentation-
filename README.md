@@ -1,7 +1,7 @@
 # Skin-Cancer-Classification-Ham10000-CNN---Data-Augmentation
 
 
-![alt text](https://github.com/BheZelmat/Predicting-medical-costs-billed-by-health-insurance-EDA-Regression-/blob/main/img.png?raw=true)
+![alt text](https://github.com/BheZelmat/Skin-Cancer-Classification-Ham10000-CNN---Data-Augmentation-/blob/main/img.png?raw=true)
   
 ## 📝 Description
 - The project "Predicting Medical Costs Billed by Health Insurance" leverages a comprehensive dataset of 1338 entries, encompassing attributes such as age, sex, BMI, number of children, smoking status, region, and individual medical charges. It aims to analyze how these factors impact medical costs.
